@@ -1,0 +1,15 @@
+ #button{
+	 background-color:#33bbef;
+	 width:60px;
+	 height:40px;
+	 margin-bottom:20px;
+	 text-align:center;
+ }
+ 
+ #compteur{
+	 height:50px;
+	 width:90px;
+	 font-size:40px;
+	 border:1px dashed black;
+	 border-radius:5px;
+ }

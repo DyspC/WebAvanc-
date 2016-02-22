@@ -1,0 +1,23 @@
+ #button{
+	 background-color:#33bbef;
+	 width:60px;
+	 height:40px;
+	 margin:20px;
+	 text-align:center;
+	 border-radius:10px;
+ }
+ 
+ 
+ .carre{
+	 border-radius:10px;
+	 position:relative;
+	 height:200px;
+	 width:200px;
+	 background-color:red;
+	 margin-bottom:2px;
+ }
+ 
+ body{
+	 margin:0px;
+	 padding:0px;
+ }
