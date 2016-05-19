@@ -1,0 +1,49 @@
+#canBG, #canFG, #Overlay {
+    border-style: solid; 
+    border-width: 2px; 
+    width: 1560px;
+    height: 936px;
+    /*background: url(../assets/BG-model.png);*/
+}
+
+.button{
+	height:40px;
+	width:60px;
+	background-color:#33bbef;
+	border-radius:5%;
+	margin-left:5px;
+}
+
+.gameZone{
+	position: absolute;
+	margin-left:50px;
+	margin-top:50px;
+	width: 1560px;
+    height: 936px;
+}
+
+#BG{
+	z-index:1;/*
+	background-color:red;*/
+}
+
+#FG{
+	z-index:2;/*
+	background-color:green;*/
+}
+
+#Overlay{
+	z-index:10;/*
+	background-color:blue;*/
+}
+
+#canTestPerso{
+	border:2px solid black;
+	position: absolute;
+	margin-left:50px;
+	margin-top:1000px;
+	width: 128px;
+    height: 128px;
+	display:none;
+}
+
