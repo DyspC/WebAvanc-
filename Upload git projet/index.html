@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Isaac : Curse of the canvas interpolation & the seamless 3D maze</title>
+		<title>RIP Isaac 0 respect</title>
         <script src="./js/game.js"></script>
         <link rel="stylesheet" type="text/css" href="./style/game.css">
     </head>
@@ -11,8 +11,13 @@
 		<div id="FG" class="gameZone"></div>
 		<div id="Overlay" class="gameZone"></div>
 		<div id="test_perso"></div>
-		
+		<textarea readonly id="logZone"> </textarea>
+		<span id="lolu"/>&nbsp;&nbsp; </span>
 		<span class="button" onClick="anim=false" /> <b> ! YOLO </b></span>
-		<span class="button" onClick="anim=true" /> <b> YOLO </b></span>
+		<span class="button" onClick="anim=true;lastT=Date.now()" /> <b> YOLO </b></span>
+		<span class="button" onClick="afficheHitbox= !afficheHitbox" /> <b> Hitbox </b></span>
+		<span class="button" onClick="pokemon= !pokemon" /> <b> Pokeball go </b></span>
+		<span class="button" onClick="spawnFoe(100,100)" /> <b> Foe </b></span>
+		
     </body>
 </html>
