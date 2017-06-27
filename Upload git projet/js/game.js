@@ -8,6 +8,7 @@ var fps=60.;
 var lastT;
 var clockAnim=0;
 var nbKills=0;
+var assetsPath = "https://raw.githubusercontent.com/DyspC/WebAvance/master/Upload%20git%20projet/assets/"
 //Canvas
 var divBG;
 var canBG;
@@ -24,7 +25,7 @@ var conTestPerso;
 
 //Background
 var imgBackground=new Image();
-imgBackground.src="assets/BG-basement.png";
+imgBackground.src=assetsPath+"BG-basement.png";
 // var xBackgroundOffset = 0;
 // var xBackgroundSpeed = 0;
 var backgroundWidth=1560;
@@ -76,7 +77,7 @@ function keyUpHandler(event) {
     }
 ///////////////////////////////////
 var imgHitbox=new Image();
-imgHitbox.src="assets/hitbox.png";
+imgHitbox.src=assetsPath+"hitbox.png";
 
 function HitboxMur(top_left_x,top_left_y,width,height){
 	this.x=top_left_x;
@@ -155,8 +156,8 @@ var player=new HitboxRond(136,50,13,21,7);
 	}
 
 
-player.imgHead.src = "./assets/Isaac_head.png";
-player.imgBody.src = "./assets/Isaac_body.png";
+player.imgHead.src = assetsPath+"Isaac_head.png";
+player.imgBody.src = assetsPath+"Isaac_body.png";
 //////////////////////////////////
 //	Boosts
 
@@ -201,7 +202,7 @@ var tearDamage=3.5;
 var larmesBadass=false;
 var pokemon=false;
 var tearSprite=new Image();
-	tearSprite.src="./assets/Tears.png";
+	tearSprite.src=assetsPath+"Tears.png";
 var maxTearCount=50;
 var tearIndex=0;
 //var matTear = matRond(10);
@@ -275,7 +276,7 @@ var xRoom=25,yRoom=8;
 var xmRoom=279,ymRoom=127;
 
 var imgDoor = new Image();
-imgDoor.src = "./assets/Porte.png";
+imgDoor.src = assetsPath+"Porte.png";
 
 var doorState={
 	NONE:4,
@@ -327,7 +328,7 @@ function Bouboule(x,y){
 	this.hurt=0;
 	this.alive=true;
 	this.sprites=new Image();
-	this.sprites.src="assets/default_foe.png";
+	this.sprites.src=assetsPath+"default_foe.png";
 	this.speed=foeSpeed;
 	this.cursorAnim=0;		// %3frames
 	this.IA=function(dt){			// IA vite fait valable seulement sur un terrain de jeu convexe
