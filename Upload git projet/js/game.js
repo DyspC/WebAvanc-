@@ -1,3 +1,64 @@
+var player=new HitboxRond(136,50,13,21,7);
+	player.height=26;
+	player.width=28;
+	player.indexAnim=0; 
+	player.imgHead=new Image();
+	player.imgBody=new Image();
+	player.bodyDir=-1;					// 10 frames	// -1 = on anime pas et on affiche le corps immobile
+	player.headDir=0;
+	player.shooting=0;					// 2 frames
+	player.hurt=0;
+	player.alive=true;
+	
+	player.health=3;
+	player.coins=0;
+	player.bombs=0;
+	player.keys=0;
+	player.speed=.15;					
+
+	player.draw=function(){
+		if(this.bodyDir==-1){
+			conTestPerso.drawImage(this.imgBody,0,0,32,32,0,16,128,128);
+		}else{
+			conTestPerso.drawImage(this.imgBody,32*Math.floor(this.indexAnim),32*this.bodyDir,32,32,0,16,128,128);
+		}
+		conTestPerso.drawImage(this.imgHead,32*this.shooting,28*this.headDir,32,28,0,0,128,112);
+		conFG.drawImage(canTestPerso,0,0,128,128+16,this.x,this.y,this.width,this.height);
+		return 0;
+	}
+	player.drawHitbox=function(){
+		conFG.beginPath();
+		conFG.arc(this.x+(this.xOffset||0),this.y+(this.yOffset||0),this.rayon,0,2*Math.PI,false);
+		conFG.fillStyle="violet";
+		conFG.fill();
+	}
+
+
+
+var assetsPath = "https://raw.githubusercontent.com/DyspC/WebAvance/master/Upload%20git%20projet/assets/"
+// Chargement des images au debut lolu
+
+var imgBackground=new Image();
+imgBackground.src=assetsPath+"BG-basement.png";
+
+var imgHitbox=new Image();
+imgHitbox.src=assetsPath+"hitbox.png";
+
+player.imgHead.src = assetsPath+"Isaac_head.png";
+player.imgBody.src = assetsPath+"Isaac_body.png";
+
+
+var tearSprite=new Image();
+	tearSprite.src=assetsPath+"Tears.png";
+
+
+var imgDoor = new Image();
+imgDoor.src = assetsPath+"Porte.png";
+
+//---------------------------------
+
+
+
 var animFrame = window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
             window.mozRequestAnimationFrame    ||
@@ -8,7 +69,6 @@ var fps=60.;
 var lastT;
 var clockAnim=0;
 var nbKills=0;
-var assetsPath = "https://raw.githubusercontent.com/DyspC/WebAvance/master/Upload%20git%20projet/assets/"
 //Canvas
 var divBG;
 var canBG;
@@ -24,8 +84,6 @@ var canTestPerso;
 var conTestPerso;
 
 //Background
-var imgBackground=new Image();
-imgBackground.src=assetsPath+"BG-basement.png";
 // var xBackgroundOffset = 0;
 // var xBackgroundSpeed = 0;
 var backgroundWidth=1560;
@@ -76,8 +134,6 @@ function keyUpHandler(event) {
         
     }
 ///////////////////////////////////
-var imgHitbox=new Image();
-imgHitbox.src=assetsPath+"hitbox.png";
 
 function HitboxMur(top_left_x,top_left_y,width,height){
 	this.x=top_left_x;
@@ -120,44 +176,7 @@ function distanceHB(HBa,HBb){
 var afficheHitbox=false;
 
 
-var player=new HitboxRond(136,50,13,21,7);
-	player.height=26;
-	player.width=28;
-	player.indexAnim=0; 
-	player.imgHead=new Image();
-	player.imgBody=new Image();
-	player.bodyDir=-1;					// 10 frames	// -1 = on anime pas et on affiche le corps immobile
-	player.headDir=0;
-	player.shooting=0;					// 2 frames
-	player.hurt=0;
-	player.alive=true;
-	
-	player.health=3;
-	player.coins=0;
-	player.bombs=0;
-	player.keys=0;
-	player.speed=.15;					
 
-	player.draw=function(){
-		if(this.bodyDir==-1){
-			conTestPerso.drawImage(this.imgBody,0,0,32,32,0,16,128,128);
-		}else{
-			conTestPerso.drawImage(this.imgBody,32*Math.floor(this.indexAnim),32*this.bodyDir,32,32,0,16,128,128);
-		}
-		conTestPerso.drawImage(this.imgHead,32*this.shooting,28*this.headDir,32,28,0,0,128,112);
-		conFG.drawImage(canTestPerso,0,0,128,128+16,this.x,this.y,this.width,this.height);
-		return 0;
-	}
-	player.drawHitbox=function(){
-		conFG.beginPath();
-		conFG.arc(this.x+(this.xOffset||0),this.y+(this.yOffset||0),this.rayon,0,2*Math.PI,false);
-		conFG.fillStyle="violet";
-		conFG.fill();
-	}
-
-
-player.imgHead.src = assetsPath+"Isaac_head.png";
-player.imgBody.src = assetsPath+"Isaac_body.png";
 //////////////////////////////////
 //	Boosts
 
@@ -201,8 +220,6 @@ var tearSpeed=0.15;
 var tearDamage=3.5;
 var larmesBadass=false;
 var pokemon=false;
-var tearSprite=new Image();
-	tearSprite.src=assetsPath+"Tears.png";
 var maxTearCount=50;
 var tearIndex=0;
 //var matTear = matRond(10);
@@ -275,8 +292,6 @@ function damageToIndex(damage){
 var xRoom=25,yRoom=8;
 var xmRoom=279,ymRoom=127;
 
-var imgDoor = new Image();
-imgDoor.src = assetsPath+"Porte.png";
 
 var doorState={
 	NONE:4,
